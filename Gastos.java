@@ -22,7 +22,7 @@ public class Gastos {
 
         gastos.add(new Gastos(valor, tipo));
 
-        System.out.println("O gasto foi adicionado com sucesso!!");
+        System.out.println("Gasto adicionado com sucesso!");
     }
 
     public Gastos(double valor, String tipo) {
