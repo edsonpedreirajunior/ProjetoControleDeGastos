@@ -25,6 +25,30 @@ public class Gastos {
         System.out.println("Gasto adicionado com sucesso!");
     }
 
+    public void removerGastos(){
+        Scanner s = new Scanner(System.in);
+
+        if (gastos.isEmpty()){
+            System.out.println("Ainda não há nenhum gasto registrado!");
+            return;
+        }
+
+        for (int i = 0; i < gastos.size(); i++) {
+            System.out.println(i + " - Despesa");
+            System.out.println(i + " - Valor: " + valor);
+            System.out.println(i + " - Tipo: " + tipo);
+            System.out.printf("Digite o gasto que deseja remover: ");
+            int indice = s.nextInt();
+            if (indice >= 0 && indice <= gastos.size()) {
+               gastos.remove(indice);
+                System.out.println("Despesa removida com sucesso!");
+            } else {
+                System.out.println("Despesa não encontrada!!");
+            }
+        }
+
+    }
+
     public Gastos(double valor, String tipo) {
         this.valor = valor;
         this.tipo = tipo;

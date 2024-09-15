@@ -22,6 +22,8 @@ public class TestGastos {
                 break;
             } else if (entrada == 1) {
                 gastos.adicionarGastos();
+            } else if (entrada == 2) {
+                gastos.removerGastos();
             }
         }
     }
