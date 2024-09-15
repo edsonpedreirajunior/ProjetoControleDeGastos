@@ -14,13 +14,14 @@ public class TestGastos {
             System.out.println("3 - Listar gastos");
             System.out.println("4 - Atualizar gastos");
             System.out.println("0 - Sair");
+            System.out.printf("Digite qual opção deseja: ");
 
             int entrada = s.nextInt();
             
             if (entrada == 0){
                 break;
             } else if (entrada == 1) {
-                
+                gastos.adicionarGastos();
             }
         }
     }
