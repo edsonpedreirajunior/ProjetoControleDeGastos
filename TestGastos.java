@@ -24,6 +24,8 @@ public class TestGastos {
                 gastos.adicionarGastos();
             } else if (entrada == 2) {
                 gastos.removerGastos();
+            } else if (entrada == 3) {
+                gastos.listarGastos();
             }
         }
     }

@@ -33,12 +33,14 @@ public class Gastos {
             return;
         }
 
-        for (int i = 0; i < gastos.size(); i++) {
+        //Laço que percorre o arraylist e mostra os gastos registrados
+        for (int i = 1; i < gastos.size(); i++) {
             System.out.println(i + " - Despesa");
             System.out.println(i + " - Valor: " + valor);
             System.out.println(i + " - Tipo: " + tipo);
             System.out.printf("Digite o gasto que deseja remover: ");
             int indice = s.nextInt();
+            //Laço que se o indice escolhido existir, remove o gasto selecionado
             if (indice >= 0 && indice <= gastos.size()) {
                gastos.remove(indice);
                 System.out.println("Despesa removida com sucesso!");
@@ -47,6 +49,22 @@ public class Gastos {
             }
         }
 
+    }
+
+    public void listarGastos(){
+        Scanner s = new Scanner(System.in);
+
+        if (gastos.isEmpty()){
+            System.out.println("Nenhum gasto registrado");
+            return;
+        }
+
+        //Laço que percorre o arraylist e mostra os gastos registrados
+        for (int i = 0; i < gastos.size(); i++) {
+            System.out.println(i + " - Despesa");
+            System.out.println(i + " - Valor: " + valor);
+            System.out.println(i + " - Tipo: " + tipo);
+        }
     }
 
     public Gastos(double valor, String tipo) {
