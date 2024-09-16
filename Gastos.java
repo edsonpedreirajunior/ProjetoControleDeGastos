@@ -41,7 +41,7 @@ public class Gastos {
             System.out.printf("Digite o gasto que deseja remover: ");
             int indice = s.nextInt();
             //Laço que se o indice escolhido existir, remove o gasto selecionado
-            if (indice >= 0 && indice <= gastos.size()) {
+            if (indice >= 1 && indice <= gastos.size()) {
                gastos.remove(indice);
                 System.out.println("Despesa removida com sucesso!");
             } else {
@@ -52,18 +52,51 @@ public class Gastos {
     }
 
     public void listarGastos(){
-        Scanner s = new Scanner(System.in);
-
         if (gastos.isEmpty()){
             System.out.println("Nenhum gasto registrado");
             return;
         }
 
         //Laço que percorre o arraylist e mostra os gastos registrados
-        for (int i = 0; i < gastos.size(); i++) {
+        for (int i = 1; i < gastos.size(); i++) {
             System.out.println(i + " - Despesa");
             System.out.println(i + " - Valor: " + valor);
             System.out.println(i + " - Tipo: " + tipo);
+        }
+    }
+
+    public void atualizarGastos(){
+        Scanner s = new Scanner(System.in);
+
+        if (gastos.isEmpty()){
+            System.out.println("Ainda não há nenhum gasto registrado!");
+            return;
+        }
+
+        //Laço que percorre o arraylist e mostra os gastos registrados
+        for (int i = 1; i < gastos.size(); i++) {
+            System.out.println(i + " - Despesa");
+            System.out.println(i + " - Valor: " + valor);
+            System.out.println(i + " - Tipo: " + tipo);
+            System.out.printf("Digite o gasto que deseja editar: ");
+            int indice = s.nextInt();
+            //Laço que se o indice escolhido existir, remove o gasto selecionado
+            if (indice >= 1 && indice <= gastos.size()) {
+                gastos.remove(indice);
+                System.out.println("Digite o valor do gasto: ");
+                setValor(s.nextDouble());
+
+                System.out.println("Digite o tipo do gasto: ");
+                setTipo(s.nextLine());
+
+                s.nextLine();
+
+                gastos.add(new Gastos(valor, tipo));
+
+                System.out.println("Gasto editado com sucesso!");
+            } else {
+                System.out.println("Despesa não encontrada!!");
+            }
         }
     }
 
