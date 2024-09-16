@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class TestGastos {
     public static void main(String[] args) {
-        Gastos gastos = new Gastos();
+        Gastos controle = new Gastos();
         Scanner s = new Scanner(System.in);
         
         while(true){
@@ -21,14 +21,16 @@ public class TestGastos {
             if (entrada == 0){
                 break;
             } else if (entrada == 1) {
-                gastos.adicionarGastos();
+                controle.adicionarGastos();
             } else if (entrada == 2) {
-                gastos.removerGastos();
+                controle.removerGastos();
             } else if (entrada == 3) {
-                gastos.listarGastos();
+                controle.listarGastos();
             } else if (entrada == 4) {
-                gastos.atualizarGastos();
+                controle.atualizarGastos();
             }
         }
     }
 }
+
+
