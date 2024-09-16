@@ -5,8 +5,8 @@ import java.util.Scanner;
 
 public class Gastos {
     ArrayList<Gastos> gastos = new ArrayList<>();
-     public double valor, salario;
-     public String tipo;
+    public double valor, salario;
+    public String tipo;
 
 
     public void adicionarGastos() {
@@ -38,18 +38,18 @@ public class Gastos {
             System.out.println(i + " - Despesa");
             System.out.println(i + " - Valor: " + gastos.get(i).getValor());
             System.out.println(i + " - Tipo: " + gastos.get(i).getTipo());
-            System.out.printf("Digite o gasto que deseja remover: ");
-            int indice = s.nextInt();
-            //Laço que se o indice escolhido existir, remove o gasto selecionado
-            if (indice >= 0 && indice <= gastos.size()) {
-                gastos.remove(indice);
-                System.out.println("Despesa removida com sucesso!");
-            } else {
-                System.out.println("Despesa não encontrada!!");
-            }
         }
-
+        //Laço que se o indice escolhido existir, remove o gasto selecionado
+        System.out.printf("Digite o gasto que deseja remover: ");
+        int indice = s.nextInt();
+        if (indice >= 0 && indice <= gastos.size()) {
+            gastos.remove(indice);
+            System.out.println("Despesa removida com sucesso!");
+        } else {
+            System.out.println("Despesa não encontrada!!");
+        }
     }
+
 
     public void listarGastos() {
         if (gastos.isEmpty()) {
