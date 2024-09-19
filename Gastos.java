@@ -100,6 +100,22 @@ public class Gastos {
         }
     }
 
+    public void calculoReservaEmergencia(){
+        ArrayList<Double> valores = new ArrayList<>();
+        for (Gastos gasto : gastos){
+            valores.add(gasto.getValor());
+        }
+
+
+        double contador = 0;
+        for (double valor : valores){
+            contador += valor;
+        }
+
+        double reserva = contador*6;
+        System.out.println("O valor dever ser proximo a " + reserva);
+    }
+
 
     public Gastos(double valor, String tipo) {
         this.valor = valor;

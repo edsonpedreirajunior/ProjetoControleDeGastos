@@ -13,6 +13,7 @@ public class TestGastos {
             System.out.println("2 - Remover gastos");
             System.out.println("3 - Listar gastos");
             System.out.println("4 - Atualizar gastos");
+            System.out.println("5 - Reserva de emergência");
             System.out.println("0 - Sair");
             System.out.printf("Digite qual opção deseja: ");
 
@@ -28,6 +29,8 @@ public class TestGastos {
                 controle.listarGastos();
             } else if (entrada == 4) {
                 controle.atualizarGastos();
+            } else if (entrada == 5) {
+                controle.calculoReservaEmergencia();
             }
         }
     }
